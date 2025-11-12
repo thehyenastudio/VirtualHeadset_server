@@ -1,28 +1,28 @@
 #pragma once
-#include <wx/taskbar.h>
 #include <wx/menu.h>
-#include <wx/log.h> // For wxLogDebug
+#include <wx/taskbar.h>
+
 #include "core/WindowManager.h"
 
 class Tray : public wxTaskBarIcon {
 public:
-    Tray();
+	Tray();
 	~Tray();
 
 private:
-    enum
-    {
-        SHOW_BUTTON_ID = wxID_HIGHEST + 1,
+	enum
+	{
+		SHOW_BUTTON_ID = wxID_HIGHEST + 1,
 		SHOW_PREVIEW_BUTTON_ID,
 		EXIT_BUTTON_ID = wxID_EXIT
-    };
+	};
 
-    virtual wxMenu* CreatePopupMenu() override;
+	virtual wxMenu* CreatePopupMenu() override;
 
-    // =========== EVENTS ===========
-    void OnLeftButtonDClick(wxTaskBarIconEvent&);
+	// =========== EVENTS ===========
+	void OnLeftButtonDClick(wxTaskBarIconEvent&);
 
-    void OnShowBtn(wxCommandEvent&);
-    void OnPreviewBtn(wxCommandEvent&);
-    void OnExitBtn(wxCommandEvent&);
+	void OnShowBtn(wxCommandEvent&);
+	void OnPreviewBtn(wxCommandEvent&);
+	void OnExitBtn(wxCommandEvent&);
 };

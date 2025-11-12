@@ -1,7 +1,8 @@
-#include <core/image_capture/CaptureDevice.h>
+#include "core/frame_capture/CaptureDevice.h"
 
-CaptureDevice::CaptureDevice()
+CaptureDevice::CaptureDevice(CaptureMethod method, CaptureType type = CaptureType::SCREEN_CAPTURE)
 {
+	this->Init(method, type);
 }
 
 CaptureDevice::~CaptureDevice()
@@ -20,12 +21,12 @@ bool CaptureDevice::Init(CaptureMethod method, CaptureType type)
 
 	switch (method)
 	{
-	case CaptureMethod::DXGI:
-		capturer = new DXGICapture();
-		break;
-	case CaptureMethod::GDI:
-		capturer = new GDICapture();
-		break;
+		case CaptureMethod::DXGI:
+			capturer = new DXGICapture();
+			break;
+		case CaptureMethod::GDI:
+			capturer = new GDICapture();
+			break;
 	}
 
 	if (!capturer->Init())
@@ -36,10 +37,10 @@ bool CaptureDevice::Init(CaptureMethod method, CaptureType type)
 		return false;
 	}
 
-    return true;
+	return true;
 }
 
-FrameBGRA CaptureDevice::GetFrame()
+AVFrame* CaptureDevice::GetFrame()
 {
 	return capturer->CaptureFrame();
 }

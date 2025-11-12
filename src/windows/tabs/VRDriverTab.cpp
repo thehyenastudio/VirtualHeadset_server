@@ -1,4 +1,4 @@
-#include <windows/tabs/VRDriverTab.h>
+#include "windows/tabs/VRDriverTab.h"
 
 VRDriverTab::VRDriverTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 {
@@ -8,5 +8,4 @@ VRDriverTab::VRDriverTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 }
 
 VRDriverTab::~VRDriverTab()
-{
-}
+{}

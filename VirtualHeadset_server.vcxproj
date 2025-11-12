@@ -94,17 +94,17 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WXUSINGDLL;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WXUSINGDLL;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswud;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DEVs\SDK\ffmpeg\include;D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswud;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp23</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;avformat.lib;avcodec.lib;avutil.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\DEVs\SDK\ffmpeg\lib;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -113,34 +113,34 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WXUSINGDLL;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WXUSINGDLL;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswu;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DEVs\SDK\ffmpeg\include;D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswu;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp23</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;avformat.lib;avcodec.lib;avutil.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\DEVs\SDK\ffmpeg\lib;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WXUSINGDLL;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WXUSINGDLL;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswud;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DEVs\SDK\ffmpeg\include;D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswud;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp23</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;avformat.lib;avcodec.lib;avutil.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\DEVs\SDK\ffmpeg\lib;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,17 +149,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WXUSINGDLL;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WXUSINGDLL;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswu;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DEVs\SDK\ffmpeg\include;D:\Projects\VirtualHeadset\VirtualHeadset_server;D:\Projects\VirtualHeadset\VirtualHeadset_server\inc;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll/mswu;%(AdditionalIncludeDirectories);C:/DEVs/SDK/WXWIDGETS/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp23</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;d3d12.lib;dxgi.lib;dxguid.lib;wxmsw32ud_core.lib;wxbase32ud.lib;avformat.lib;avcodec.lib;avutil.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\DEVs\SDK\ffmpeg\lib;C:/DEVs/SDK/WXWIDGETS/lib/vc14x_x64_dll</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -167,10 +167,15 @@
     <ClCompile Include="inc\windows\tabs\VRDriverTab.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\core\image_capture\CaptureDevice.cpp" />
-    <ClCompile Include="src\core\image_capture\DXGICapture.cpp" />
-    <ClCompile Include="src\core\image_capture\GDICapture.cpp" />
+    <ClCompile Include="src\core\filters\EyeFilter.cpp" />
+    <ClCompile Include="src\core\filters\FFmpegFilter.cpp" />
+    <ClCompile Include="src\core\filters\SBSFilter.cpp" />
+    <ClCompile Include="src\core\frame_capture\CaptureDevice.cpp" />
+    <ClCompile Include="src\core\frame_capture\DXGICapture.cpp" />
+    <ClCompile Include="src\core\frame_capture\GDICapture.cpp" />
     <ClCompile Include="src\core\threads\CaptureProcessorThread.cpp" />
+    <ClCompile Include="src\core\threads\FrameProcessorThread.cpp" />
+    <ClCompile Include="src\core\threads\NetworkThread.cpp" />
     <ClCompile Include="src\core\WindowManager.cpp" />
     <ClCompile Include="src\Tray.cpp" />
     <ClCompile Include="src\windows\PreviewWindow.cpp" />
@@ -184,14 +189,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Application.h" />
-    <ClInclude Include="inc\core\image_capture\CaptureBase.h" />
-    <ClInclude Include="inc\core\image_capture\CaptureDevice.h" />
-    <ClInclude Include="inc\core\image_capture\DXGICapture.h" />
-    <ClInclude Include="inc\core\image_capture\FrameBGRA.h" />
-    <ClInclude Include="inc\core\image_capture\GDICapture.h" />
+    <ClInclude Include="inc\core\filters\EyeFilter.h" />
+    <ClInclude Include="inc\core\filters\FilterBase.h" />
+    <ClInclude Include="inc\core\filters\SBSFilter.h" />
+    <ClInclude Include="inc\core\Queue.h" />
+    <ClInclude Include="inc\core\frame_capture\CaptureBase.h" />
+    <ClInclude Include="inc\core\frame_capture\CaptureDevice.h" />
+    <ClInclude Include="inc\core\frame_capture\DXGICapture.h" />
+    <ClInclude Include="inc\core\frame_capture\GDICapture.h" />
     <ClInclude Include="inc\core\threads\CaptureProcessorThread.h" />
+    <ClInclude Include="inc\core\threads\FrameProcessorThread.h" />
+    <ClInclude Include="inc\core\threads\NetworkThread.h" />
     <ClInclude Include="inc\core\WindowManager.h" />
     <ClInclude Include="inc\Tray.h" />
+    <ClInclude Include="inc\utils\FFmpegUtils.h" />
     <ClInclude Include="inc\windows\PreviewWindow.h" />
     <ClInclude Include="inc\windows\tabs\BaseStationTab.h" />
     <ClInclude Include="inc\windows\tabs\ConnectTab.h" />

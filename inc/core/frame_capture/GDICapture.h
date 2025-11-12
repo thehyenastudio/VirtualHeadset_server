@@ -1,5 +1,6 @@
 #pragma once
 #include "CaptureBase.h"
+
 class GDICapture : public CaptureBase
 {
 public:
@@ -7,6 +8,6 @@ public:
 	~GDICapture() override = default;
 
 	bool Init() override;
-	FrameBGRA CaptureFrame() override;
+	AVFrame* CaptureFrame() override;
 };
 

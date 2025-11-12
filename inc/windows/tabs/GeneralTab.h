@@ -1,14 +1,14 @@
 #pragma once
+#include <wx/checkbox.h>
+#include <wx/choice.h>
+#include <wx/glcanvas.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
+#include <wx/slider.h>
+#include <wx/statbox.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/choice.h>
-#include <wx/slider.h>
 #include <wx/tglbtn.h>
-#include <wx/checkbox.h>
-#include <wx/statbox.h>
-#include <wx/glcanvas.h>
 
 class GeneralTab : public wxPanel
 {
@@ -34,7 +34,7 @@ private:
 	wxChoice* processingModeChc = nullptr;
 
 	wxCheckBox* useFake3DChk = nullptr;
-	
+
 	// Left Eye 3D Settings
 	wxSlider* leftEyeShiftSlider = nullptr;
 	wxTextCtrl* leftEyeShiftTxt = nullptr;

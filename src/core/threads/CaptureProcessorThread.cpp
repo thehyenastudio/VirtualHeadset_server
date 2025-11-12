@@ -1,11 +1,27 @@
-#include <core/threads/CaptureProcessorThread.h>
+#include "core/threads/CaptureProcessorThread.h"
+
+CaptureProcessorThread::CaptureProcessorThread(Queue<FramePtr>* queue) : wxThread(wxTHREAD_JOINABLE)
+{
+	m_queue = queue;
+}
 
 wxThread::ExitCode CaptureProcessorThread::Entry()
 {
-    while (!TestDestroy()) {
-        // Capture processing logic goes here
-        // For demonstration, we'll just yield to avoid busy waiting
-		wxThread::Yield();
-    }
-    return 0;
+	HANDLE hThread = GetCurrentThread();
+	SetThreadDescription(hThread, L"CaptureThread");
+
+	m_capturer.Init(CaptureMethod::DXGI);
+
+	while (!TestDestroy())
+	{
+		AVFrame* raw = m_capturer.GetFrame();
+		if (raw)
+		{
+			FramePtr frame(raw);
+			m_queue->Push(std::move(frame));
+		}
+		wxThread::Sleep(16); // TODO: DEBUG NECCESSARY
+	}
+
+	return (wxThread::ExitCode) 0;
 }

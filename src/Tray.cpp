@@ -1,4 +1,4 @@
-#include <Tray.h>
+#include "Tray.h"
 
 Tray::Tray()
 {
@@ -45,5 +45,6 @@ void Tray::OnPreviewBtn(wxCommandEvent&)
 
 void Tray::OnExitBtn(wxCommandEvent&)
 {
+	WindowManager::Instance().CloseAllWindows();
 	wxTheApp->Exit();
 }

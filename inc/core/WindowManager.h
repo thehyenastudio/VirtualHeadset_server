@@ -1,6 +1,6 @@
 #pragma once
-#include "../windows/MainWindow.h"
-#include "../windows/PreviewWindow.h"
+#include "windows/MainWindow.h"
+#include "windows/PreviewWindow.h"
 
 class WindowManager
 {
@@ -13,12 +13,17 @@ public:
 	MainWindow* GetMainWindow();
 	PreviewWindow* GetPreviewWindow();
 
+	bool MainWindowShown() const;
+	bool PreviewWindowShown() const;
+
+	void CloseAllWindows();
+
 	void LoseMainWindow();
 	void LosePreviewWindow();
 
 private:
 	WindowManager() = default;
-	~WindowManager();
+	~WindowManager() = default;
 
 	WindowManager(const WindowManager&) = delete;
 	WindowManager& operator=(const WindowManager&) = delete;

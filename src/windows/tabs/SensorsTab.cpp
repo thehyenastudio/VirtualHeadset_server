@@ -1,4 +1,4 @@
-#include <windows/tabs/SensorsTab.h>
+#include "windows/tabs/SensorsTab.h"
 
 SensorsTab::SensorsTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 {
@@ -8,5 +8,4 @@ SensorsTab::SensorsTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 }
 
 SensorsTab::~SensorsTab()
-{
-}
+{}

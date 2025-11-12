@@ -1,4 +1,4 @@
-#include <windows/tabs/InputTab.h>
+#include "windows/tabs/InputTab.h"
 
 InputTab::InputTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 {
@@ -8,5 +8,4 @@ InputTab::InputTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 }
 
 InputTab::~InputTab()
-{
-}
+{}

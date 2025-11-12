@@ -1,6 +1,4 @@
-#include <Application.h>
-#include <config.h>
-#include <fstream>
+#include "Application.h"
 
 bool Application::OnInit()
 {
@@ -17,7 +15,7 @@ bool Application::OnInit()
 		wxFileName logFile(wxStandardPaths::Get().GetExecutablePath());
 		logFile.SetFullName("info.log");
 		wxString path = logFile.GetFullPath();
-		
+
 		m_logStream = new std::ofstream(path.ToStdString(), std::ios::out | std::ios::app);
 
 		wxLog::SetActiveTarget(new wxLogStream(m_logStream));
@@ -27,9 +25,7 @@ bool Application::OnInit()
 
 		Config::Instance().Load();
 
-		m_captureProcessorThread = new CaptureProcessorThread();
-		m_captureProcessorThread->Create();
-		m_captureProcessorThread->Run(); // TODO: run if needed (connected or preview shown)
+		this->Start();
 
 		m_tray = new Tray();
 
@@ -41,7 +37,7 @@ bool Application::OnInit()
 		wxLogMessage(_("Virtual Headset server started"));
 		return true;
 	}
-	else 
+	else
 	{
 		return false;
 	}
@@ -49,17 +45,66 @@ bool Application::OnInit()
 
 int Application::OnExit()
 {
-	if (m_captureProcessorThread)
-	{
-		m_captureProcessorThread->Delete();
-	}
+	this->Stop();
 
-	Config::Instance().Save(); // TODO: ONLY TEST
 	wxLog::SetActiveTarget(nullptr);
-	if (m_logStream) {
+	if (m_logStream)
+	{
 		m_logStream->close();
 		delete m_logStream;
 		m_logStream = nullptr;
 	}
 	return 0;
 }
+
+void Application::Start()
+{
+	m_captureProcessorThread = new CaptureProcessorThread(&m_frameQueue);
+	if (m_captureProcessorThread->Create() != wxTHREAD_NO_ERROR)
+	{
+		wxLogError("Failed to create capture thread");
+	}
+	else
+	{
+		m_captureProcessorThread->Run();
+	}
+
+	m_frameProcessorThread = new FrameProcessorThread(&m_frameQueue, &m_packetQueue);
+	if (m_frameProcessorThread->Create() != wxTHREAD_NO_ERROR)
+	{
+		wxLogError("Failed to create processor thread");
+	}
+	else
+	{
+		m_frameProcessorThread->Run();
+	}
+
+}
+
+void Application::Stop()
+{
+	if (m_captureProcessorThread)
+	{
+		if (m_captureProcessorThread->IsRunning())
+		{
+			m_captureProcessorThread->Delete();
+			m_captureProcessorThread->Wait();
+		}
+		delete m_captureProcessorThread;
+		m_captureProcessorThread = nullptr;
+	}
+
+	m_frameQueue.NotifyAll();
+
+	if (m_frameProcessorThread)
+	{
+		if (m_frameProcessorThread->IsRunning())
+		{
+			m_frameProcessorThread->Delete();
+			m_frameProcessorThread->Wait();
+		}
+		delete m_frameProcessorThread;
+		m_frameProcessorThread = nullptr;
+	}
+}
+

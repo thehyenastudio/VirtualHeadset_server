@@ -1,4 +1,4 @@
-#include <windows/tabs/GeneralTab.h>
+#include "windows/tabs/GeneralTab.h"
 
 GeneralTab::GeneralTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 {
@@ -47,5 +47,4 @@ GeneralTab::GeneralTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 }
 
 GeneralTab::~GeneralTab()
-{
-}
+{}

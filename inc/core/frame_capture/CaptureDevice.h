@@ -1,8 +1,12 @@
 #pragma once
 #include <wx/log.h>
+
+extern "C" {
+#include <libavutil/frame.h>
+}
+
 #include "DXGICapture.h"
 #include "GDICapture.h"
-#include "FrameBGRA.h"
 
 enum class CaptureType
 {
@@ -20,11 +24,11 @@ enum class CaptureMethod
 class CaptureDevice
 {
 public:
-	CaptureDevice();
+	CaptureDevice(CaptureMethod method, CaptureType type = CaptureType::SCREEN_CAPTURE);
 	~CaptureDevice();
 
 	bool Init(CaptureMethod method, CaptureType type = CaptureType::SCREEN_CAPTURE);
-	FrameBGRA GetFrame();
+	AVFrame* GetFrame();
 private:
 	CaptureType type;
 	CaptureBase* capturer = nullptr;

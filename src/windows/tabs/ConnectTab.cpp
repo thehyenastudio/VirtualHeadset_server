@@ -1,5 +1,5 @@
-#include <windows/tabs/ConnectTab.h>
-#include <config.h>
+#include "config.h"
+#include "windows/tabs/ConnectTab.h"
 
 ConnectTab::ConnectTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 {
@@ -70,5 +70,5 @@ ConnectTab::~ConnectTab()
 
 void ConnectTab::OnConnectButtonClk(wxCommandEvent& event)
 {
-	
+
 }

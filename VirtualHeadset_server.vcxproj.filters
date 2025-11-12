@@ -27,13 +27,13 @@
     <ClCompile Include="src\windows\MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\image_capture\CaptureDevice.cpp">
+    <ClCompile Include="src\core\frame_capture\CaptureDevice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\image_capture\DXGICapture.cpp">
+    <ClCompile Include="src\core\frame_capture\DXGICapture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\image_capture\GDICapture.cpp">
+    <ClCompile Include="src\core\frame_capture\GDICapture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\windows\tabs\ConnectTab.cpp">
@@ -57,9 +57,6 @@
     <ClCompile Include="src\windows\tabs\VRDriverTab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\threads\CaptureProcessorThread.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\windows\PreviewWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -67,6 +64,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\core\WindowManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\threads\CaptureProcessorThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\threads\FrameProcessorThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\filters\EyeFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\filters\FFmpegFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\filters\SBSFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\threads\NetworkThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,19 +92,16 @@
     <ClInclude Include="inc\windows\MainWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\image_capture\CaptureDevice.h">
+    <ClInclude Include="inc\core\frame_capture\CaptureDevice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\image_capture\CaptureBase.h">
+    <ClInclude Include="inc\core\frame_capture\CaptureBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\image_capture\DXGICapture.h">
+    <ClInclude Include="inc\core\frame_capture\DXGICapture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\image_capture\GDICapture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\core\image_capture\FrameBGRA.h">
+    <ClInclude Include="inc\core\frame_capture\GDICapture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\windows\tabs\ConnectTab.h">
@@ -107,9 +119,6 @@
     <ClInclude Include="inc\windows\tabs\BaseStationTab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\threads\CaptureProcessorThread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="inc\windows\PreviewWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -120,6 +129,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\threads\CaptureProcessorThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\Queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\utils\FFmpegUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\threads\FrameProcessorThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\filters\EyeFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\filters\FilterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\filters\SBSFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\threads\NetworkThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

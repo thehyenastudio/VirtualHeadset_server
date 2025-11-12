@@ -1,4 +1,4 @@
-#include <windows/tabs/BaseStationTab.h>
+#include "windows/tabs/BaseStationTab.h"
 
 BaseStationTab::BaseStationTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 {
@@ -8,5 +8,4 @@ BaseStationTab::BaseStationTab(wxWindow* parent) : wxPanel(parent, wxID_ANY)
 }
 
 BaseStationTab::~BaseStationTab()
-{
-}
+{}

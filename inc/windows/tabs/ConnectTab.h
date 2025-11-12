@@ -1,10 +1,10 @@
 #pragma once
+#include <wx/button.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
 #include <wx/statbox.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/button.h>
 
 class ConnectTab : public wxPanel
 {
