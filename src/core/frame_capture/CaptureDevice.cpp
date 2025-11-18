@@ -1,6 +1,6 @@
 #include "core/frame_capture/CaptureDevice.h"
 
-CaptureDevice::CaptureDevice(CaptureMethod method, CaptureType type = CaptureType::SCREEN_CAPTURE)
+CaptureDevice::CaptureDevice(CaptureMethod method, CaptureType type)
 {
 	this->Init(method, type);
 }

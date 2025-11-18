@@ -6,14 +6,27 @@ extern "C" {
 #include <libavutil/frame.h>
 }
 
-struct AVFrameDeleter {
-	void operator()(AVFrame* f) const {
+enum class GPU_ENGINE
+{
+	NONE,
+	CUDA
+};
+
+GPU_ENGINE CheckGPU_Filters();
+GPU_ENGINE CheckGPU_Encoder();
+
+struct AVFrameDeleter
+{
+	void operator()(AVFrame* f) const
+	{
 		if (f) av_frame_free(&f);
 	}
 };
 
-struct AVPacketDeleter {
-	void operator()(AVPacket* p) const {
+struct AVPacketDeleter
+{
+	void operator()(AVPacket* p) const
+	{
 		if (p) av_packet_free(&p);
 	}
 };

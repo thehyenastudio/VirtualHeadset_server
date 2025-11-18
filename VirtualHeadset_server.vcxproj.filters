@@ -72,16 +72,22 @@
     <ClCompile Include="src\core\threads\FrameProcessorThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\filters\EyeFilter.cpp">
+    <ClCompile Include="src\core\threads\NetworkThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\filters\FFmpegFilter.cpp">
+    <ClCompile Include="src\core\filters\FilterBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\filters\EyeFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\core\filters\SBSFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\threads\NetworkThread.cpp">
+    <ClCompile Include="src\utils\FFmpegUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\FrameEncoder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -143,16 +149,19 @@
     <ClInclude Include="inc\core\threads\FrameProcessorThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\filters\EyeFilter.h">
+    <ClInclude Include="inc\core\threads\NetworkThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\filters\FilterBase.h">
+    <ClInclude Include="inc\core\filters\EyeFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\core\filters\SBSFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\threads\NetworkThread.h">
+    <ClInclude Include="inc\core\filters\FilterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\FrameEncoder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

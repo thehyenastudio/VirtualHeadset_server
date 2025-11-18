@@ -16,7 +16,11 @@ protected:
 	virtual ExitCode Entry() override;
 
 private:
-	CaptureDevice m_capturer;
 	Queue<FramePtr>* m_queue = nullptr;
+
+	CaptureDevice m_capturer = {
+		CaptureMethod::DXGI,
+		CaptureType::SCREEN_CAPTURE
+	};
 };
 

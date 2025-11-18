@@ -7,10 +7,8 @@ CaptureProcessorThread::CaptureProcessorThread(Queue<FramePtr>* queue) : wxThrea
 
 wxThread::ExitCode CaptureProcessorThread::Entry()
 {
-	HANDLE hThread = GetCurrentThread();
-	SetThreadDescription(hThread, L"CaptureThread");
-
-	m_capturer.Init(CaptureMethod::DXGI);
+	wxLog::SetThreadActiveTarget(wxLog::GetActiveTarget());
+	SetThreadDescription(GetCurrentThread(), L"CaptureThread");
 
 	while (!TestDestroy())
 	{

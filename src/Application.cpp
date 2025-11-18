@@ -25,8 +25,6 @@ bool Application::OnInit()
 
 		Config::Instance().Load();
 
-		this->Start();
-
 		m_tray = new Tray();
 
 		if (!Config::Instance().GetStartMinimized())
@@ -35,6 +33,9 @@ bool Application::OnInit()
 		}
 
 		wxLogMessage(_("Virtual Headset server started"));
+
+		this->Start();
+
 		return true;
 	}
 	else
@@ -79,6 +80,17 @@ void Application::Start()
 		m_frameProcessorThread->Run();
 	}
 
+	m_networkThread = new NetworkThread(&m_packetQueue, "192.168.0.104", 5000);
+	m_networkThread->InitMuxer(m_frameProcessorThread->GetEncoderContext());
+
+	if (m_networkThread->Create() != wxTHREAD_NO_ERROR)
+	{
+		wxLogError("Failed to create processor thread");
+	}
+	else
+	{
+		m_networkThread->Run();
+	}
 }
 
 void Application::Stop()
@@ -105,6 +117,19 @@ void Application::Stop()
 		}
 		delete m_frameProcessorThread;
 		m_frameProcessorThread = nullptr;
+	}
+
+	m_packetQueue.NotifyAll();
+
+	if (m_networkThread)
+	{
+		if (m_networkThread->IsRunning())
+		{
+			m_networkThread->Delete();
+			m_networkThread->Wait();
+		}
+		delete m_networkThread;
+		m_networkThread = nullptr;
 	}
 }
 

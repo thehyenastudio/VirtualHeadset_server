@@ -39,7 +39,8 @@ public:
 		return true;
 	}
 
-	void NotifyAll() {
+	void NotifyAll()
+	{
 		wxMutexLocker lock(mutex);
 		cond.Broadcast();
 	}

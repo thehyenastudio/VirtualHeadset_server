@@ -11,10 +11,11 @@ struct EyeParams
 class EyeFilter : public FilterBase
 {
 public:
-	EyeFilter();
+	EyeFilter(int srcW, int srcH, AVPixelFormat srcFmt, AVRational tb, const EyeParams& params);
 
-	void Init() override;
+	void Init(bool useGPU = false) override;
 	AVFrame* Filter(const AVFrame* in) override;
+	AVFrame* Filter(const AVFrame* left, const AVFrame* right) override { return nullptr; };
 
 private:
 	int m_srcW;
